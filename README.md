@@ -17,7 +17,6 @@ This repository contains a full-stack application built with React and Node.js. 
 2. **Run the Application**:
    ```sh
    npm start
-   cd client && npm start
    
 3. **View in Browser**:
    Backend: http://localhost:3001
