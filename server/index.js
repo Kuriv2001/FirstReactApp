@@ -1,23 +1,10 @@
-// server/index.js
-
 const express = require("express");
-
-const PORT = process.env.PORT || 3001;
+const countriesRouter = require("./v1/routes/CountriesRouter");
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!" });
-  });
-
-app.get("/countries", (req, res) => {
-    res.json({ message: "Hello from server!" });
-  });
-
-// All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-  });  
+app.use("/api/v1/countries", countriesRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
