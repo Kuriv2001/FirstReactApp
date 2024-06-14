@@ -45,6 +45,7 @@ function App() {
         <ul>
           {filteredData.map((country, index) => (
             <li key={index}>
+              <img src={country.flag} alt={`${country.name} flag`} style={{ width: "30px", height: "20px", marginRight: "10px" }} />
               {country.name}
               {showCurrency && country.currency ? ` - ${country.currency}` : ""}
             </li>
