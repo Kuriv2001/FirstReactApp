@@ -30,3 +30,86 @@ ul {
 li {
   margin: 0.5rem 0; /* Optional: add some space between list items */
 }
+
+.search-input {
+  margin-left: 1rem; /* Add space between slider and search input */
+  padding: 10px 20px; /* Increase padding for a bigger input */
+  border-radius: 20px; /* Rounded edges */
+  border: 1px solid #ccc; /* Optional: border color */
+  font-size: 1.2rem; /* Increase font size */
+  width: 300px; /* Adjust width as needed */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s; /* Transition for focus state */
+}
+
+.search-input:focus {
+  border-color: #61dafb; /* Border color on focus */
+}
+
+/* Container for the slider and search input */
+.control-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem; /* Add space between logo and controls */
+}
+
+/* Toggle switch styling */
+.slider-container {
+  display: flex;
+  align-items: center;
+}
+
+.slider-container p {
+  margin: 0 1rem 0 0; /* Add space between title and slider */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.flag {
+  width: 20px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 10px; /* Space between flag and country name */
+}

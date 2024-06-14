@@ -31,16 +31,23 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={toggleCurrency}>
-          {showCurrency ? "Hide Currency" : "Show Currency"}
-        </button>
-        <input
-          type="text"
-          placeholder="Search for your favorite countries"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
+        <h1>Countries App</h1>
+        <div className="control-container">
+          <div className="slider-container">
+            <p>Currency Toggle:</p>
+            <label className="switch">
+              <input type="checkbox" checked={showCurrency} onChange={toggleCurrency} />
+              <span className="slider"></span>
+            </label>
+          </div>
+          <input
+            type="text"
+            placeholder="Search for your favorite countries"
+            value={searchTerm}
+            onChange={handleSearch}
+            className="search-input"
+          />
+        </div>
         <p>{!data ? "Loading..." : "All Countries:"}</p>
         <ul>
           {filteredData.map((country, index) => (
