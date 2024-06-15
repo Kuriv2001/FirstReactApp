@@ -1,5 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import CountryDetail from "./CountryDetail";
 import "./App.css";
 
 function App() {

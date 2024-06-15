@@ -2,6 +2,7 @@ const express = require("express");
 const controller = require("../../controllers/CountriesController");
 const router = express.Router();
 
+router.get("/:name", controller.getCountryByName);
 router.get("/", controller.getAllCountries);
 
 router.get("*", (req, res) => {

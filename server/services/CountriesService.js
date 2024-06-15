@@ -22,6 +22,22 @@ const getAllCountries = async () => {
   }
 };
 
+const getCountryByName = async (name) => {
+  try {
+    const response = await axios.get(`https://restcountries.com/v3.1/all`);
+    const country = response.data.find((country) => country.name.common.toLowerCase() === name.toLowerCase());
+    if (!country) {
+      throw new Error(`Country with name "${name}" not found.`);
+    }else{
+      return country;
+    }
+  } catch (error) {
+    console.error(`Error fetching country by name: ${name}`, error);
+    throw error;
+  }
+};
+
 module.exports = {
   getAllCountries,
+  getCountryByName,
 };
